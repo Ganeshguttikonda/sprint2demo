@@ -2,15 +2,15 @@ import { combineReducers } from "redux";
 import { applyMiddleware } from "redux";
 import { createStore } from "redux";
 import thunk from "redux-thunk";
-
-import { EmployeeReducer } from "./EmpoyeeReducer";
+import { AdminReducer } from "./AdminReducer";
+import { RegistrationReducer } from "./RegistrationReducer";
+import { UserReducer } from "./UserReducer";
 
 const rootReducer = combineReducers({
-  employee: EmployeeReducer,
-  // depart : DepartRducer,
-  //vechil: VechuileReucer
+  registration: RegistrationReducer,
+  user: UserReducer,
+  admin: AdminReducer,
 });
 
-// const store = createStore(rootReducer);
 const store = createStore(rootReducer, applyMiddleware(thunk));
 export { store };

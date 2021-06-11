@@ -1,27 +1,54 @@
 import logo from "./logo.svg";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import { EmployeeUpsert } from "./components/EmployeeUpsert";
-import { EmployeeList } from "./components/EmployeeList";
-import { Nav, Navbar } from "react-bootstrap";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Registration } from "./components/Registration";
+import { Dashboard } from "./components/Dashboard";
 import { AppNavBar } from "./common/AppNavBar";
+import { User } from "./components/User";
+import { AppNavBar1 } from "./common/AppNavBar1";
+import { MyProfile } from "./components/MyProfile";
+import { Home } from "./components/Home";
+import { AppNavBar2 } from "./common/AppNavBar2";
+import { Admin } from "./components/Admin";
+import { Login } from "./components/Login";
 
 function App() {
   return (
     <Router>
-      <AppNavBar />
-
       <Switch>
-        <Route path="/create-employee">
-          <EmployeeUpsert />
+        <Route path="/registration">
+          <AppNavBar />
+          <Registration />
         </Route>
 
-        <Route path="/list-employee">
-          <EmployeeList />
+        <Route path="/userlogin">
+          <AppNavBar />
+          <User />
         </Route>
 
-        <Route exact path="/">
-          <EmployeeList />
+        <Route path="/login">
+          <AppNavBar />
+          <Login />
+        </Route>
+
+        <Route path="/adminlogin">
+          <AppNavBar />
+          <Admin />
+        </Route>
+
+        <Route path="/dashboard">
+          <AppNavBar1 />
+          <Dashboard />
+        </Route>
+
+        <Route path="/home">
+          <AppNavBar />
+          <Home />
+        </Route>
+
+        <Route path="/myprofile">
+          <AppNavBar2 />
+          <MyProfile />
         </Route>
       </Switch>
     </Router>
